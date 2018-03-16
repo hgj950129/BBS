@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.hgj.BBS.Dao.ForumMapper">
+    <resultMap id="BaseResultMap" type="com.hgj.BBS.Po.Forum" >
+        <id column="SID" property="SID" jdbcType="INTEGER" />
+        <result column="SName" property="SName" jdbcType="VARCHAR" />
+        <result column="SMasterID" property="SMasterID" jdbcType="INTEGER" />
+        <result column="SProfile" property="SProfile" jdbcType="VARCHAR" />
+        <result column="SStatement" property="SStatement" jdbcType="VARCHAR" />
+        <result column="STopicCount" property="STopicCount" jdbcType="INTEGER" />
+        <result column="SClickCoount" property="SClickCoount" jdbcType="INTEGER" />
+    </resultMap>
+</mapper>

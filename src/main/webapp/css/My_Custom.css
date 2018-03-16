@@ -1,0 +1,71 @@
+#border{
+	width: 500px;
+	padding: 30px;
+	margin-left: 440px;
+}
+#postion{
+	margin-left: 460px;
+	margin-top: 150px;
+}
+body.bankground{
+	max-width: 100%;
+	background-color: white;
+}
+a.position{
+	position: relative;
+	left: 75%;
+}
+
+label.font{
+	color: #000000;
+	font-style: italic;
+	font-size: x-large;
+}
+button.btn-color{
+	width: 100%;
+	color: white;
+	background-color: #336699;
+}
+button.btn-form-color{
+	width: 30%;
+	color: white;
+	background-color: #336699;
+}
+input.btn-color{
+	color: white;
+	background-color: #336699;
+}
+
+div.bg-img{
+	margin-top: 300px;
+	width: 600px;
+	height: 400px;
+	margin: auto;
+	/*background-color: black;*/
+}
+img.img-size{
+	margin-top: 130px;
+	width: 600px;
+	height: 400px;
+}
+
+h3.h3title{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+p.details{
+    text-indent: 1cm;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.min_height {
+    min-height: 70%;
+	width: 100%;
+	max-width: 100%;
+	max-height: revert;
+}

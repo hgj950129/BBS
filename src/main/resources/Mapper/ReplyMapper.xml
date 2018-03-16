@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.hgj.BBS.Dao.ReplyMapper">
+    <resultMap id="BaseResultMap" type="com.hgj.BBS.Po.Reply" >
+        <id column="RID" property="RID" jdbcType="INTEGER" />
+        <result column="RTID" property="RTID" jdbcType="INTEGER" />
+        <result column="RSID" property="RSID" jdbcType="INTEGER" />
+        <result column="RUID" property="RUID" jdbcType="INTEGER" />
+        <result column="Rtime" property="Rtime" jdbcType="TIMESTAMP" />
+        <result column="RContent" property="RContent" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <select id="findByTopicId" parameterType="int" resultMap="BaseResultMap">
+        SELECT * FROM reply WHERE RTID=#{id} ORDER BY Rtime;
+    </select>
+    <insert id="addReply" parameterType="Reply">
+        INSERT INTO reply(RTID,RUID,RContent,Rtime) VALUES(#{RTID},#{RUID},#{RContent},#{Rtime});
+    </insert>
+</mapper>

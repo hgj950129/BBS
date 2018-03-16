@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.hgj.BBS.Dao.TopicMapper">
+    <resultMap id="BaseResultMap" type="com.hgj.BBS.Po.Topic" >
+        <id column="TID" property="TID" jdbcType="INTEGER" />
+        <result column="TSID" property="TSID" jdbcType="INTEGER" />
+        <result column="TUID" property="TUID" jdbcType="INTEGER" />
+        <result column="TReplyCount" property="TReplyCount" jdbcType="INTEGER" />
+        <result column="TTopic" property="TTopic" jdbcType="VARCHAR" />
+        <result column="TTime" property="TTime" jdbcType="TIMESTAMP" />
+        <result column="TClickCoount" property="TClickCoount" jdbcType="INTEGER" />
+        <result column="TFlag" property="TFlag" jdbcType="INTEGER" />
+        <result column="TContents" property="TContents" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <select id="findTop5" resultMap="BaseResultMap">
+        SELECT * FROM topic ORDER BY TClickCoount DESC LIMIT 5;
+    </select>
+    <select id="findTopicById" parameterType="int" resultMap="BaseResultMap">
+        SELECT * FROM topic WHERE TID=#{id}
+    </select>
+    <select id="groupByForum" parameterType="int" resultMap="BaseResultMap">
+        SELECT * FROM topic WHERE TSID=#{tuid} ORDER BY TClickCoount DESC;
+    </select>
+    <insert id="addTopic" parameterType="Topic">
+        INSERT INTO topic (TSID,TUID,TTopic,TContents,TTime)  VALUES(#{TSID},#{TUID},#{TTopic},#{TContents},#{TTime});
+    </insert>
+</mapper>
